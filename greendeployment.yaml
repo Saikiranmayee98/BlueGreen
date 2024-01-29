@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sarika-green-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greenapp
+  template:
+    metadata:
+      labels:
+        app: greenapp
+    spec:
+      containers:
+        - name: greenapp
+          image: sarika143/anjan:g
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: web
+              containerPort: 80
+              protocol: TCP
+

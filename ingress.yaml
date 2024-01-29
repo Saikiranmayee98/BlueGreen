@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blue-green-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  rules:
+  - host: eactesting.continuoustestplatform.com
+    http:
+      paths:
+      - path: /bluegreenapp/(.*)$
+        pathType: Prefix
+        backend:
+          service:
+            name: blue-service  # Corrected service name
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - eactesting.continuoustestplatform.com
+    secretName: ingress-ssl-cert
+
