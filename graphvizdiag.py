@@ -37,6 +37,6 @@ def generate_summary_with_openai(file_path):
         import traceback
         traceback.print_exc()
 
-file_path = r"C:\bin\windows_10_msbuild_Release_graphviz-9.0.0-win32\bluegreen"
+file_path = r"C:\bin\windows_10_msbuild_Release_graphviz-9.0.0-win32"
 result = generate_summary_with_openai(file_path)
 print(result)
