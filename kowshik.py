@@ -28,6 +28,6 @@ def generate_summary_with_openai(file_path):
         traceback.print_exc()
  
  
-file_path = r"C:\Users\kowshik.bhasuru\OneDrive - Accenture\Documents\My Work professional\Python\genai\chunking file to be.txt"
+file_path = r"C:\bin\windows_10_msbuild_Release_graphviz-9.0.0-win32\bluegreen"
 result = generate_summary_with_openai(file_path)
 print(result)
