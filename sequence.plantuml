@@ -1,0 +1,6 @@
+@startuml Hello World
+skinparam Style strictuml
+A -> B : Hello World
+skinparam SequenceMessageAlignment center
+A <- B : Hi
+@enduml
