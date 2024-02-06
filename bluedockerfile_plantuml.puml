@@ -1,15 +1,19 @@
+@startuml
+package "Service" {
+    [blue-service]
+}
 
-            @startuml hello
-            class File {
-                + name: String
-                + size: int
-            }
+package "Spec" {
+    [type: ClusterIP]
+    [selector]
+    [ports]
+}
 
-            class Summary {
-                + data: String
-                + visualize(): void
-            }
+[blue-service] --> [type: ClusterIP] : spec
+[blue-service] --> [selector] : spec
+[blue-service] --> [ports] : spec
 
-            File -- Summary : Contains
-            @enduml
-            
+[ports] --> [protocol: TCP]
+[ports] --> [port: 80]
+[ports] --> [targetPort: 80]
+@enduml
