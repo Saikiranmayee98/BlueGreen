@@ -1,0 +1,18 @@
+@startuml
+!define DEPLOYMENT
+!define CONTAINER
+!define PORT
+
+DEPLOYMENT Deployment "sarika-blue-deployment" {
+  replicas: 1
+  CONTAINER blueapp "blueapp" {
+    image: "sarika143/anjan:b"
+    imagePullPolicy: IfNotPresent
+    PORT web "web" {
+      containerPort: 80
+      protocol: TCP
+    }
+  }
+}
+
+@enduml

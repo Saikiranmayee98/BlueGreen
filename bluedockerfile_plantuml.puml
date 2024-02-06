@@ -1,5 +1,5 @@
 
-            @startuml
+            @startuml hello
             class File {
                 + name: String
                 + size: int
