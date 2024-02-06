@@ -9,5 +9,5 @@ def generate_diagram(input_file, output_format="png"):
         print(f"Error generating diagram: {e}")
 
 if __name__ == "__main__":
-    input_file = "input.puml"
+    input_file = "diag.puml"
     generate_diagram(input_file)
